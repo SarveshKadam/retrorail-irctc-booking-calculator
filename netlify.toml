@@ -4,15 +4,13 @@
   
   # Directory with the build output
   publish = "dist"
-  
-  # Optional: Use Node 18 or higher
-  NODE_VERSION = "20"
 
 # Redirect all requests to index.html for SPA routing (React Router)
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
+  force = false
 
 # Optional: Set custom headers for security and performance
 [[headers]]
