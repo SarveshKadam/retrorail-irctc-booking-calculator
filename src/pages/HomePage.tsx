@@ -17,7 +17,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Toaster, toast } from '@/components/ui/sonner';
-import { ThemeToggle } from '@/components/ThemeToggle';
+
 import { useIsMobile } from '@/hooks/use-mobile';
 import {
   calculateBookingDate,
@@ -40,24 +40,12 @@ const SHOW_ADS = false;
  * Safety Orange (#E8581B) for the "Opening Date" accents.
  */
 const RailOpeningLogo = ({ className }: { className?: string }) => (
-  <svg
-    viewBox="0 0 100 100"
-    className={cn("w-8 h-8 md:w-10 md:h-10", className)}
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      d="M5 70C5 70 20 68 35 64C50 60 75 52 80 48C85 44 83 35 78 32C73 29 40 34 30 37C20 40 5 48 5 58V70Z"
-      fill="#21409A"
-    />
-    <path d="M5 70H30L25 75H5V70Z" fill="#1a327a" />
-    <circle cx="72" cy="68" r="22" fill="white" stroke="#21409A" strokeWidth="2.5" />
-    <rect x="62" y="60" width="20" height="18" rx="2" stroke="#E8581B" strokeWidth="2.5" />
-    <path d="M62 66H82" stroke="#E8581B" strokeWidth="2.5" />
-    <path d="M67 58V62" stroke="#E8581B" strokeWidth="2" strokeLinecap="round" />
-    <path d="M77 58V62" stroke="#E8581B" strokeWidth="2" strokeLinecap="round" />
-    <path d="M72 71L75 74" stroke="#E8581B" strokeWidth="2" strokeLinecap="round" />
-  </svg>
+  <img
+    src="/logo.png"
+    alt="Train Ticket Dates Logo"
+    className={cn("object-contain", className)}
+    style={{ height: "37px", width: "69px" }}
+  />
 );
 /**
  * Result Card Component for displaying booking details
@@ -237,9 +225,9 @@ export function HomePage() {
   };
   const handleShare = async () => {
     const shareData = {
-      title: 'RailTicketOpeningDate.com',
-      text: 'Hey! I found this tool that tells you exactly when to book train tickets: railticketopeningdate.com. It even has a countdown for Tatkal!',
-      url: 'https://railticketopeningdate.com'
+      title: 'trainticketdates.in',
+      text: 'Hey! I found this tool that tells you exactly when to book train tickets: trainticketdates.in. It even has a countdown for Tatkal!',
+      url: 'https://trainticketdates.in'
     };
     if (navigator.share) {
       try {
@@ -264,7 +252,6 @@ export function HomePage() {
       isHighAlert ? "bg-[#FFF9E6]" : "bg-[#F0F4F8]"
     )}>
       <div className="scanline" />
-      <ThemeToggle />
       <header className={cn(
         "transition-colors duration-500 text-white border-b-4 border-black py-6 px-4 relative overflow-hidden",
         isHighAlert ? "bg-[#E8581B]" : "bg-[#21409A]"
@@ -279,8 +266,8 @@ export function HomePage() {
               <RailOpeningLogo />
             </motion.div>
             <div className="flex flex-col">
-              <h1 className="text-xl md:text-2xl lg:text-3xl font-bold uppercase tracking-tight whitespace-nowrap">
-                RailTicketOpeningDate<span className={isHighAlert ? "text-yellow-300" : "text-[#E8581B]"}>.com</span>
+              <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold uppercase tracking-tight whitespace-nowrap">
+                trainticketdates<span className={isHighAlert ? "text-yellow-300" : "text-[#E8581B]"}>.in</span>
               </h1>
               <p className="hidden md:block font-mono text-[9px] opacity-80 uppercase tracking-widest">
                 {bookingType === 'GENERAL' ? "General ARP Tracker" : "Tatkal Countdown"}
@@ -297,10 +284,9 @@ export function HomePage() {
             </div>
             <Button
               onClick={handleShare}
-              variant="outline"
-              className="bg-white/10 hover:bg-white/20 border-white/30 text-white text-[10px] uppercase h-9 md:h-10 px-3 md:px-4 font-bold tracking-widest"
+              className="bg-white/10 hover:bg-white/20 border border-white/30 text-white text-[10px] uppercase h-9 md:h-10 px-2 sm:px-3 md:px-4 font-bold tracking-widest min-w-[36px] flex items-center justify-center"
             >
-              <Share2 className="w-3.5 h-3.5 sm:mr-2" />
+              <Share2 className="w-4 h-4 sm:mr-2 shrink-0" />
               <span className="hidden sm:inline">Share</span>
             </Button>
           </div>
@@ -478,22 +464,12 @@ export function HomePage() {
           <RailOpeningLogo className="w-10 h-10 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
         </div>
         <div className="space-y-4 px-6">
-          <p className="font-black uppercase tracking-[0.3em] text-[11px] md:text-sm text-gray-800">RailTicketOpeningDate.com</p>
+          <p className="font-black uppercase tracking-[0.3em] text-[11px] md:text-sm text-gray-800">trainticketdates.in</p>
           <p className="text-xs md:text-sm text-muted-foreground max-w-2xl mx-auto font-medium leading-relaxed">
-            railticketsopeningdate.netlify.app is an independent utility for travelers. Not affiliated with IRCTC or Indian Railways.
+            trainticketdates.in is an independent utility for travelers. Not affiliated with IRCTC or Indian Railways.
           </p>
         </div>
-        <div className="mt-10 flex flex-col items-center gap-4">
-          <div className="flex items-center gap-3 text-[10px] font-mono font-black border-2 border-black px-6 py-2.5 bg-gray-50 shadow-sm">
-            <span className="text-gray-500">Built with ❤️ by Aurelia</span>
-            <span className="w-px h-4 bg-black/20" />
-            <div className="flex items-center gap-1.5 text-[#21409A]">
-              <Clock className="w-3.5 h-3.5" />
-              <span>IST: {format(toIST(currentTime), 'HH:mm:ss')}</span>
-            </div>
-          </div>
-          <p className="text-[10px] text-gray-400 uppercase tracking-widest italic font-bold">A Mission-Critical Travel Utility Engine</p>
-        </div>
+
       </footer>
       <Toaster richColors position="top-center" theme="light" closeButton />
     </div>
