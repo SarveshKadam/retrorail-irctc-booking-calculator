@@ -177,10 +177,10 @@ function ResultCard({
         )}
         {SHOW_ADS && (
           <div id="ad-slot-result" className="mt-4 pt-4 border-t border-gray-100">
-             <a href="https://www.makemytrip.com" target="_blank" rel="noopener noreferrer" className="text-[9px] font-bold text-[#21409A] hover:underline flex items-center justify-center gap-2 group">
-               💡 Pro Tip: Check Flight Prices if trains are waitlisted
-               <ExternalLink className="w-2.5 h-2.5 opacity-0 group-hover:opacity-100 transition-opacity" />
-             </a>
+            <a href="https://www.makemytrip.com" target="_blank" rel="noopener noreferrer" className="text-[9px] font-bold text-[#21409A] hover:underline flex items-center justify-center gap-2 group">
+              💡 Pro Tip: Check Flight Prices if trains are waitlisted
+              <ExternalLink className="w-2.5 h-2.5 opacity-0 group-hover:opacity-100 transition-opacity" />
+            </a>
           </div>
         )}
       </div>
@@ -311,7 +311,7 @@ export function HomePage() {
           <div id="ad-slot-top" className="w-full border-2 border-dashed border-gray-400 p-8 bg-white/50 flex flex-col items-center justify-center min-h-[120px] transition-all hover:bg-white shadow-sm">
             <span className="text-[10px] uppercase font-bold text-gray-400 mb-3 tracking-[0.3em]">Sponsored Travel Insight</span>
             <a href="https://www.makemytrip.com" target="_blank" rel="noopener noreferrer" className="text-[#21409A] font-black hover:underline flex items-center gap-3 group text-base md:text-lg text-center px-4">
-               {isHighAlert ? "🚨 Tatkal Full? Check Flight Prices Instantly on MakeMyTrip" : "🚖 Planning a trip? Book reliable station transfers on MakeMyTrip"}
+              {isHighAlert ? "🚨 Tatkal Full? Check Flight Prices Instantly on MakeMyTrip" : "🚖 Planning a trip? Book reliable station transfers on MakeMyTrip"}
               <span className="group-hover:translate-x-2 transition-transform">→</span>
             </a>
           </div>
@@ -324,14 +324,14 @@ export function HomePage() {
                   <Label className="text-[10px] font-black uppercase mb-4 block text-gray-500 tracking-[0.2em]">Select Booking Type</Label>
                   <Tabs defaultValue="GENERAL" value={bookingType} onValueChange={(v) => setBookingType(v as BookingType)} className="w-full">
                     <TabsList className="grid grid-cols-2 w-full h-14 bg-gray-200 p-1 border-2 border-black rounded-none">
-                      <TabsTrigger 
-                        value="GENERAL" 
+                      <TabsTrigger
+                        value="GENERAL"
                         className="rounded-none data-[state=inactive]:text-gray-500 data-[state=active]:bg-[#21409A] data-[state=active]:text-white font-black text-xs uppercase"
                       >
                         General
                       </TabsTrigger>
-                      <TabsTrigger 
-                        value="TATKAL" 
+                      <TabsTrigger
+                        value="TATKAL"
                         className="rounded-none data-[state=inactive]:text-gray-500 data-[state=active]:bg-[#E8581B] data-[state=active]:text-white font-black text-xs uppercase flex items-center gap-2"
                       >
                         <Zap className="w-3 h-3 fill-current" /> Tatkal
@@ -343,12 +343,12 @@ export function HomePage() {
                   <Label htmlFor="journey-date" className="text-[10px] font-black uppercase mb-3 block text-gray-500 tracking-[0.2em] flex items-center gap-2">
                     <CalendarCheck className="w-4 h-4 text-[#21409A]" /> Date of Travel
                   </Label>
-                  <Input 
-                    id="journey-date" 
-                    type="date" 
-                    className="retro-input w-full h-16 bg-white text-xl font-black" 
-                    value={journeyDateStr} 
-                    onChange={handleDateChange} 
+                  <Input
+                    id="journey-date"
+                    type="date"
+                    className="retro-input w-full h-16 bg-white text-xl font-black"
+                    value={journeyDateStr}
+                    onChange={handleDateChange}
                   />
                 </div>
               </div>
@@ -480,19 +480,19 @@ export function HomePage() {
         <div className="space-y-4 px-6">
           <p className="font-black uppercase tracking-[0.3em] text-[11px] md:text-sm text-gray-800">RailTicketOpeningDate.com</p>
           <p className="text-xs md:text-sm text-muted-foreground max-w-2xl mx-auto font-medium leading-relaxed">
-            RailTicketOpeningDate.com is an independent utility for travelers. Not affiliated with IRCTC or Indian Railways.
+            railticketsopeningdate.netlify.app is an independent utility for travelers. Not affiliated with IRCTC or Indian Railways.
           </p>
         </div>
         <div className="mt-10 flex flex-col items-center gap-4">
-            <div className="flex items-center gap-3 text-[10px] font-mono font-black border-2 border-black px-6 py-2.5 bg-gray-50 shadow-sm">
-              <span className="text-gray-500">Built with ❤️ by Aurelia</span>
-              <span className="w-px h-4 bg-black/20" />
-              <div className="flex items-center gap-1.5 text-[#21409A]">
-                <Clock className="w-3.5 h-3.5" />
-                <span>IST: {format(toIST(currentTime), 'HH:mm:ss')}</span>
-              </div>
+          <div className="flex items-center gap-3 text-[10px] font-mono font-black border-2 border-black px-6 py-2.5 bg-gray-50 shadow-sm">
+            <span className="text-gray-500">Built with ❤️ by Aurelia</span>
+            <span className="w-px h-4 bg-black/20" />
+            <div className="flex items-center gap-1.5 text-[#21409A]">
+              <Clock className="w-3.5 h-3.5" />
+              <span>IST: {format(toIST(currentTime), 'HH:mm:ss')}</span>
             </div>
-            <p className="text-[10px] text-gray-400 uppercase tracking-widest italic font-bold">A Mission-Critical Travel Utility Engine</p>
+          </div>
+          <p className="text-[10px] text-gray-400 uppercase tracking-widest italic font-bold">A Mission-Critical Travel Utility Engine</p>
         </div>
       </footer>
       <Toaster richColors position="top-center" theme="light" closeButton />
